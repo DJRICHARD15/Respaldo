@@ -1,0 +1,76 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">
+          Sistema para generar ordesnes de pagos ESPE.
+        </p>
+        <div class="row">
+          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+      <div class="card-body">
+          <div class="card-body">
+            <table class="table">
+              <div class="col-12">
+                <table class="table">
+                  <div class="col-12">
+                    <form action="registro" method="post" class="form-register" onsubmit="return validar();">
+  
+                        <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO
+                            <th>
+                              No:
+                              <input type="text" placeholder="Numero de Orden" class="form-control" />
+                            </th>
+                            <th>
+                              Fecha:
+                                <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" />
+                            </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN
+                          <th>
+                            No: Contrato/Orden de Compra/Contratación:
+                            <input type="text" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
+                          </th>
+                          <th>
+                            OBJETO DE LA CONTRATACIÓN:
+                            <input type="text" placeholder="Objeto de la contratacion" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN III - INFORMACIÓN DEL CONTRATISTA
+                          <th>
+                            Nombre:
+                            <input type="text" placeholder="Nombre" class="form-control" />
+                          </th>
+                          <th>
+                            Ruc:
+                            <input type="number" placeholder="Ruc" class="form-control" />
+                          </th>
+                           <th>
+                            Mail:
+                            <input type="text" placeholder="Mail" class="form-control" />
+                          </th>
+                        </h5>
+                        
+                         <button type="button" class="btn btn-success">Guardar</button>
+                     
+                       <button type="button" class="btn btn-danger" >Cancelar  </button>
+                      </div>
+                      </form>
+                   </div>
+                </table>
+             </div>
+            </table>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,172 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">
+          Sistema para generar ordesnes de pagos ESPE.
+        </p>
+        <div class="row">
+          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+      <div class="card-body">
+          <div class="card-body">
+            <table class="table">
+              <div class="col-12">
+                <table class="table">
+                  <div class="col-12">
+                    <form action="registro" method="post" class="form-register" onsubmit="return validar();">
+  
+                      <hr align="left" noshade="noshade" size="2" width="80%" />
+
+
+                        <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO
+                            <th>
+                              No:
+                              <input type="text" placeholder="Numero de Orden" class="form-control" />
+                            </th>
+                            <th>
+                              Fecha:
+                                <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" />
+                            </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN
+                          <th>
+                            No: Contrato/Orden de Compra/Contratación:
+                            <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
+                          </th>
+                          <th>
+                            OBJETO DE LA CONTRATACIÓN:
+                            <input type="text" style="width:400px"placeholder="Objeto de la contratacion" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN III - INFORMACIÓN DEL CONTRATISTA
+                          <th>
+                            Nombre:
+                            <input type="text"  style="width:400px" placeholder="Nombre" class="form-control" />
+                          </th>
+                          <th>
+                            Ruc:
+                            <input type="number" placeholder="Ruc" class="form-control" />
+                          </th>
+                          <th>
+                           Mail:
+                            <input type="text"  style="width:300px" placeholder="Mail" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN IV - INFORMACIÓN DE LA FACTURA
+                          <th>
+                           ORD:
+                            <input type="number"  placeholder="Orden De Gasto" class="form-control" />
+                          </th>
+                          <th>
+                            Descripción:
+                            <input type="text" style="width:500px" placeholder="Descripcion" class="form-control" />
+                          </th>
+                          <th>
+                            Cantidad:
+                            <input type="number"  placeholder="Mail" class="form-control" />
+                          </th>
+                          <th>
+                            Precio Unitario:
+                            <input type="number"  placeholder="Mail" class="form-control" />
+                          </th>
+
+                        </h5>
+ 
+                      <th>
+                        Subtotal:
+                        <input type="number"  placeholder="Subtotal" class="form-control" />
+                      </th>   
+  
+  
+                        <th>
+                          Iva
+                          12%:
+                          <input type="number"  placeholder="Iva" class="form-control" />
+                        </th>
+                          
+                      <th>
+                        Otros Impuestos:
+                        <input type="number"  placeholder="Otros Impuestos" class="form-control" />
+                      </th>
+  
+                      <th>
+                        Total:
+                        <input type="number"  placeholder="Total" class="form-control" />
+                      </th>
+
+                      <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                      <h5>SECCIÓN V - INFORMACIÓN PRESUPUESTARIO PARA EL GASTO
+                        <th>
+                          Código Presupuestario
+                          <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
+                        </th>
+                        <th>
+                          OBJETO DE LA CONTRATACIÓN:
+                          <input type="text" style="width:400px"placeholder="Objeto de la contratacion" class="form-control" />
+                        </th>
+                      </h5>
+                       
+                          <div class="col-12">
+  
+                           <th>
+                              Orden
+                              <input [(ngModel)]="OrdenOne" #Orden="ngModel" type="number" id="Orden" name="Orden"  min="1" pattern="^[0-9]+"
+                                placeholder="Orden" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                            </th>
+      
+                          
+                          <div class="col-12">
+  
+  
+  
+                          </div>
+  
+                            <th>
+                                IVA
+                                <input [(ngModel)]="textoIva" #iva="ngModel" type="number" id="IVA" name="IVA" placeholder="IVA"  min="1" pattern="^[0-9]+"
+                                  mainlength="15" maxlength="666" class="form-control" size="25" required />
+                                <div *ngIf="iva.touched &&  !iva.valid">
+                                  <div *ngIf="iva.errors.required">Iva es necesario</div>
+                                  <div *ngIf="iva.errors.minlength">El iva debe ser de al menos
+                                    {{iva.errors.minlength.requiredLength}}caractres.</div>
+                                </div>
+                           </th>
+  
+                           <th>
+                              Otros Impuestos
+                              <input [(ngModel)]="textoOtrImp" #OtrImp="ngModel" type="number" id="OtrImp" name="OtrImp" placeholder="Otros Impuestos"  min="1" pattern="^[0-9]+"
+                                mainlength="15" maxlength="666" class="form-control" size="25" required />
+                              <div *ngIf="OtrImp.touched &&  !OtrImp.valid">
+                                <div *ngIf="OtrImp.errors.required">Iva es necesario</div>
+                                <div *ngIf="OtrImp.errors.minlength">Otro impuesto debe ser requerido
+                                  {{OtrImp.errors.minlength.requiredLength}}caractres.</div>
+                              </div>
+                         </th>                      
+                         <button type="button" class="btn btn-success">Guardar</button>
+                        
+                         <button type="button" class="btn btn-danger" >Cancelar  </button>
+                      </div>
+                      </form>
+                   </div>
+                </table>
+             </div>
+            </table>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

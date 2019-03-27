@@ -1,0 +1,33 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Ordenes De Gasto</h4>
+                <p class="card-category">Sistema para generar ordesnes de pagos ESPE.</p>
+            </div>
+            <div class="card-body">
+                <div class="col-12">
+                    <div class="col-12">
+                      <table class="table">
+                        <th>ordenGasto</th>
+                        <th>descripcion</th>
+                        <th>datosempleado</th>
+                        <th>certifiado</th>
+                        <th></th>
+                        <th></th>
+          
+                        <tr *ngFor="let ordenGasto of ordenGastos">
+                          <td>{{ ordenGasto.afectuar }}</td>
+                          <td>{{ ordenGasto.codPresupuestario }}</td>
+                          <td>{{ ordenGasto.descripcion }}</td>
+                          <td>{{ ordenGasto.iva }}</td>
+                          <td>{{ ordenGasto.certificadoPresupuestario.codigo }}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>

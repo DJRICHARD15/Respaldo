@@ -1,0 +1,224 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+
+      <div class="card-header card-header-danger">
+        <h4 class="card-title">Ordenes De Gasto</h4>
+        <p class="card-category">
+          Sistema para generar ordesnes de pagos ESPE.
+        </p>
+        <div class="row">
+          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+      <div class="card-body">
+          <div class="card-body">
+            <table class="table">
+              <div class="col-12">
+                <table class="table">
+                  <div class="col-12">
+                    <form action="registro" method="post" class="form-register" onsubmit="return validar();">
+  
+                      <hr align="left" noshade="noshade" size="2" width="80%" />
+
+
+                        <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO
+                            <th>
+                              No:
+                              <input type="text" placeholder="Numero de Orden" class="form-control" />
+                            </th>
+                            <th>
+                              Fecha:
+                                <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" />
+                            </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN
+                          <th>
+                            No: Contrato/Orden de Compra/Contratación:
+                            <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
+                          </th>
+                          <th>
+                            OBJETO DE LA CONTRATACIÓN:
+                            <input type="text" style="width:400px"placeholder="Objeto de la contratacion" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN III - INFORMACIÓN DEL CONTRATISTA
+                          <th>
+                            Nombre:
+                            <input type="text"  style="width:400px" placeholder="Nombre" class="form-control" />
+                          </th>
+                          <th>
+                            Ruc:
+                            <input type="number" placeholder="Ruc" class="form-control" />
+                          </th>
+                          <th>
+                           Mail:
+                            <input type="text"  style="width:300px" placeholder="Mail" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+                        <h5>SECCIÓN IV - INFORMACIÓN DE LA FACTURA
+                          <th>
+                           ORD:
+                            <input type="number"  placeholder="Orden De Gasto" class="form-control" />
+                          </th>
+                          <th>
+                            Descripción:
+                            <input type="text" style="widows: 500px;" placeholder="Ruc" class="form-control" />
+                          </th>
+                          <th>
+                            Mail:
+                            <input type="text" style="width:300px" placeholder="Mail" class="form-control" />
+                          </th>
+                        </h5>
+
+                        <hr align="left" noshade="noshade" size="2" width="80%" />
+
+ 
+                     <th>
+                            Tipo de Pago
+                            <select name="Tipo de pago" id="Tipo_contrato" class="form-control">
+                                <option selected>Mensual fijo </option>                             
+                                <option selected>Mensaul por Dia</option>
+                                <option selected>100%</option>                                                      
+                                </select>
+                            <div style="margin-left: 30px">
+                            </div>  
+                            <div style="margin-left: 1px">
+                            </div>    
+                     </th>
+  
+  
+                      <th>
+                        Ruc
+                        <input [(ngModel)]="OrdenGasto" ORDGA_RUC="ngModel" type="number" id="Ruc" name="Ruc"  min="1" pattern="^[0-9]+"
+                          placeholder="Ruc" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+                        <div *ngIf="Ruc.touched &&  !Ruc.valid">
+                          <div *ngIf="Ruc.errors.required">Número de Ruc es requerido</div>
+                          <div *ngIf="Ruc.errors.minlength">Ruc debe ser de al menos
+                            {{Ruc.errors.minlength.requiredLength}}caractres.</div>
+                        </div>
+                      </th>
+  
+                      <th>
+                        Orden de Gasto
+                        <input [(ngModel)]="OrdGFive" #OrdG="ngModel" type="text" id="OrdG" name="OrdG"
+                          placeholder="Orden de Gasto" mainlength="15" maxlength="100 " class="form-control" size="25" required />
+                        <div *ngIf="OrdG.touched &&  !OrdG.valid">
+                          <div *ngIf="OrdG.errors.required">Número de OrdG es requerido</div>
+                          <div *ngIf="OrdG.errors.minlength">OrdG debe ser de al menos
+                            {{OrdG.errors.minlength.requiredLength}}caractres.</div>
+                        </div>
+                      </th>
+  
+                      <th>
+                        Fecha
+                        <input [(ngModel)]="dateTree" #date="ngModel" type="date" id="date" name="date" placeholder="date"
+                          mainlength="15" maxlength="16" class="form-control" size="90" required />
+                        <div style="margin-left: 60px"></div>
+                        <div *ngIf="date.touched &&  !date.valid">
+                          <div *ngIf="date.errors.required">Fecha es requerido</div>
+                          <div *ngIf="date.errors.minlength">Fecha debe ser de al menos
+                            {{Fecha.errors.minlength.requiredLength}}caractres.</div>
+                        </div>
+                        <div style="margin-left: 60px">
+                        </div>
+                      </th>
+  
+                       
+                          <div class="col-12">
+  
+                           <th>
+                              Orden
+                              <input [(ngModel)]="OrdenOne" #Orden="ngModel" type="number" id="Orden" name="Orden"  min="1" pattern="^[0-9]+"
+                                placeholder="Orden" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                              <div *ngIf="Orden.touched &&  !Orden.valid">
+                                <div *ngIf="Orden.errors.required">Número de Orden es requerido</div>
+                                <div *ngIf="Orden.errors.minlength">Orden debe ser de al menos
+                                  {{Orden.errors.minlength.requiredLength}}caractres.</div>
+                              </div>
+                            </th>
+      
+                            <th>
+                                Descripción
+                                <input [(ngModel)]="DescripcionTwo" #Descripcion="ngModel" type="text" id="Descripcion" name="Descripcion" placeholder="Descripcion"
+                                   mainlength="15" maxlength="666" class="form-control" size="80" required />
+                                <div *ngIf="Descripcion.touched &&  !Descripcion.valid">
+                                   <div *ngIf="Descripcion.errors.required">Descripción es requerido</div>
+                                   <div *ngIf="Descripcion.errors.minlength">Descripción debe ser de al menos
+                                     {{Descripcion.errors.minlength.requiredLength}}caractres.</div>
+                                </div>
+                            </th>
+  
+                            <th>
+                                Cantidad
+                                <input [(ngModel)]="CantidadSix" #Cantidad="ngModel" type="number" id="Cantidad" name="Cantidad"  min="1" pattern="^[0-9]+"
+                                  placeholder="Cantidad" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                                <div *ngIf="Cantidad.touched &&  !Cantidad.valid">
+                                  <div *ngIf="Cantidad.errors.required">Número de Cantidad es requerido</div>
+                                  <div *ngIf="Cantidad.errors.minlength">Cantidad debe ser de al menos
+                                    {{Cantidad.errors.minlength.requiredLength}}caractres.</div>
+                                </div>
+                            </th>
+  
+                            
+                            <th>
+                                Precio Unitario
+                                <input [(ngModel)]="PreUniSaven" #PreUni="ngModel" type="number" id="PreUni" name="PreUni"  min="1" pattern="^[0-9]+"
+                                  placeholder="Precio Unitario" mainlength="15" maxlength="100 " class="form-control" size="10" required />
+                                <div *ngIf="PreUni.touched &&  !PreUni.valid">
+                                  <div *ngIf="PreUni.errors.required">Número de Precio Unitario es requerido</div>
+                                  <div *ngIf="PreUni.errors.minlength">PreUni debe ser de al menos
+                                    {{PreUni.errors.minlength.requiredLength}}caractres.</div>
+                                </div>
+                            </th>
+                          
+                          <div class="col-12">
+  
+  
+  
+                          </div>
+  
+                            <th>
+                                IVA
+                                <input [(ngModel)]="textoIva" #iva="ngModel" type="number" id="IVA" name="IVA" placeholder="IVA"  min="1" pattern="^[0-9]+"
+                                  mainlength="15" maxlength="666" class="form-control" size="25" required />
+                                <div *ngIf="iva.touched &&  !iva.valid">
+                                  <div *ngIf="iva.errors.required">Iva es necesario</div>
+                                  <div *ngIf="iva.errors.minlength">El iva debe ser de al menos
+                                    {{iva.errors.minlength.requiredLength}}caractres.</div>
+                                </div>
+                           </th>
+  
+                           <th>
+                              Otros Impuestos
+                              <input [(ngModel)]="textoOtrImp" #OtrImp="ngModel" type="number" id="OtrImp" name="OtrImp" placeholder="Otros Impuestos"  min="1" pattern="^[0-9]+"
+                                mainlength="15" maxlength="666" class="form-control" size="25" required />
+                              <div *ngIf="OtrImp.touched &&  !OtrImp.valid">
+                                <div *ngIf="OtrImp.errors.required">Iva es necesario</div>
+                                <div *ngIf="OtrImp.errors.minlength">Otro impuesto debe ser requerido
+                                  {{OtrImp.errors.minlength.requiredLength}}caractres.</div>
+                              </div>
+                         </th>                      
+                         <button type="button" class="btn btn-success">Guardar</button>
+                        
+                         <button type="button" class="btn btn-danger" >Cancelar  </button>
+                      </div>
+                      </form>
+                   </div>
+                </table>
+             </div>
+            </table>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
