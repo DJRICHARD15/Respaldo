@@ -36,7 +36,6 @@ import { FaqComponent } from 'app/faq/faq.component';
 import { CancelarComponent } from 'app/cancelar/cancelar.component';
 import { LoginComponent } from 'app/login/login.component';
 import { HomeComponent } from './home/home.component';
-
 registerLocaleData(localeEsAr, 'es-Ar');
 
 @NgModule({

@@ -1,5 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 declare var jquery: any;
 declare var $: any;
@@ -10,13 +13,14 @@ declare var $: any;
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+title = 'sweetAlert';
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   btnClickHome = function () {
+    // Swal(){}
     // tslint:disable-next-line:prefer-const
     let validacionUser = $('#user').val();
     // tslint:disable-next-line:prefer-const

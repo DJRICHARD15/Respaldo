@@ -1,209 +1,198 @@
+<div class="container">
+  <div class="row">
+    <img class="avatar" src="../../assets/img/Espe-Angular-Logo.png" alt="logo-ESPE">
+  </div>
+</div>
 <div class="main-content">
+
   <div class="container-fluid">
     <div class="card">
-
       <div class="card-header card-header-danger">
         <h4 class="card-title">Ordenes De Gasto</h4>
         <p class="card-category">
           Sistema para generar ordesnes de pagos ESPE.
         </p>
-        <div class="row">
-          <div class="subitem col-lg-6 rowup col-md-3 col-sm-3"></div>
-        </div>
       </div>
       <div class="card-body">
-          <div class="card-body">
-            <table class="table">
-              <div class="col-12">
-                <table class="table">
-                  <div class="col-12">
-                    <form action="registro" method="post" class="form-register" onsubmit="return validar();">
-  
-                      <hr align="left" noshade="noshade" size="2" width="80%" />
+        <div class="card-body">
+          <table class="table">
+            <div class="col-12">
+              <table class="table">
+                <div class="col-12">
+                  <form action="registro" method="post" class="form-register" onsubmit="return validar();">
 
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
 
-                        <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO
-                            <th>
-                              No:
-                              <input type="text" placeholder="Numero de Orden" class="form-control" />
-                            </th>
-                            <th>
-                              Fecha:
-                                <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" />
-                            </th>
-                        </h5>
-
-                        <hr align="left" noshade="noshade" size="2" width="80%" />
-
-                        <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN
-                          <th>
-                            No: Contrato/Orden de Compra/Contratación:
-                            <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
-                          </th>
-                          <th>
-                            Objeto de la Contratación:
-                            <input type="text" style="width:400px"placeholder="Objeto de la contratacion" class="form-control" />
-                          </th>
-                        </h5>
-
-                        <hr align="left" noshade="noshade" size="2" width="80%" />
-
-                        <h5>SECCIÓN III - INFORMACIÓN DEL CONTRATISTA
-                          <th>
-                            Nombre:
-                            <input type="text"  style="width:400px" placeholder="Nombre" class="form-control" />
-                          </th>
-                          <th>
-                            Ruc:
-                            <input type="number" placeholder="Ruc" class="form-control" />
-                          </th>
-                          <th>
-                           Mail:
-                            <input type="text"  style="width:300px" placeholder="Mail" class="form-control" />
-                          </th>
-                        </h5>
-
-                        <hr align="left" noshade="noshade" size="2" width="80%" />
-
-                        <h5>SECCIÓN IV - INFORMACIÓN DE LA FACTURA
-                          <th>
-                           ORD:
-                            <input type="number"  placeholder="Orden De Gasto" class="form-control" />
-                          </th>
-                          <th>
-                            Descripción:
-                            <input type="text" style="width:500px" placeholder="Descripcion" class="form-control" />
-                          </th>
-                          <th>
-                            Cantidad:
-                            <input type="number"  placeholder="Mail" class="form-control" />
-                          </th>
-                          <th>
-                            Precio Unitario:
-                            <input type="number"  placeholder="Mail" class="form-control" />
-                          </th>
-
-                        </h5>
- 
+                    <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO</h5>
+                    <h6>
                       <th>
-                        Subtotal:
-                        <input type="number"  placeholder="Subtotal" class="form-control" />
-                      </th>   
-  
-  
-                        <th>
-                          Iva
-                          12%:
-                          <input type="number"  placeholder="Iva" class="form-control" />
-                        </th>
-                          
-                      <th>
-                        Otros Impuestos:
-                        <input type="number"  placeholder="Otros Impuestos" class="form-control" />
+                        N°:
+                        <input type="number" placeholder="Numero de Orden" class="form-control"  min="1" pattern="^[0-9]+"/>
                       </th>
-  
                       <th>
-                        Total:
-                        <input type="number"  placeholder="Total" class="form-control" />
+                        Fecha:
+                        <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" min="2019-03-29"
+                        max="2019-03-29" step="1" />
+                      </th>
+                    </h6>
+
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
+
+                    <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN</h5>
+                    <h6>
+                      <th>
+                        N°: Contrato/Orden de Compra/Contratación:
+                        <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
+                      </th>
+                      <th>
+                        Objeto de la Contratación:
+                        <input type="text" style="width:400px" placeholder="Objeto de la contratacion" class="form-control" />
+                      </th>
+                    </h6>
+
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
+
+                    <h5>SECCIÓN III - INFORMACIÓN DEL CONTRATISTA</h5>
+                    <h6>
+                      <th>
+                        Nombre:
+                        <input type="text" style="width:300px" placeholder="Nombre" class="form-control" />
+                      </th>
+                      <th>
+                        Ruc:
+                        <input type="number" placeholder="Ruc" class="form-control"min="0" pattern="^[0-9]+" />
+                      </th>
+                      <th>
+                        Mail:
+                        <input type="email" style="width:300px" placeholder="Mail" class="form-control" />
+                      </th>
+                    </h6>
+
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
+
+                    <h5>SECCIÓN IV - INFORMACIÓN DE LA FACTURA</h5>
+                    <h6>
+                      <th>
+                        ORD:
+                        <input type="number" placeholder="Orden De Gasto" class="form-control" min="1" pattern="^[0-9]+"/>
+                      </th>
+                      <th>
+                        DESCRIPCIÓN:
+                        <input type="text" style="width:400px" placeholder="Descripcion" class="form-control" />
+                      </th>
+                      <th>
+                        CANTIDAD:
+                        <input type="number" placeholder="Cantidad" class="form-control" min="1" pattern="^[0-9]+" />
+                      </th>
+                      <th>
+                        PRECIO UNITARIO:
+                        <input type="number" placeholder="Precio Unitario" class="form-control" min="1" pattern="^[0-9]+"/>
                       </th>
 
-                      <hr align="left" noshade="noshade" size="2" width="80%" />
+                    </h6>
 
-                      <h5>SECCIÓN V - INFORMACIÓN PRESUPUESTARIO PARA EL GASTO
-                        <th>
-                          Código Presupuestario:
-                          <input type="text" style="width:350px" placeholder="Código PRESUPUESTARIO" class="form-control" />
-                        </th>
+                    <th>
+                      SUBTOTAL:
+                      <input type="number" placeholder="Subtotal" class="form-control" min="1" pattern="^[0-9]+" />
+                    </th>
+                    <th>
+                      IVA 12%:
+                      <input type="number" placeholder="Iva" class="form-control" min="1" pattern="^[0-9]+"/>
+                    </th>
 
-                        <th>
-                          Descripcion del Item Presupuestario:
-                          <input type="text" style="width:400px"placeholder="Descripcion del Item Presupuestario" class="form-control" />
-                        </th>
+                    <th>
+                      OTROS IMPUESTOS:
+                      <input type="number" placeholder="Otros Impuestos" class="form-control" min="1" pattern="^[0-9]+"/>
+                    </th>
 
-                        <th>
-                         Valor Certificado:
-                          <input type="number" style="width:400px"placeholder="Valor Certificado" class="form-control" />
-                        </th>
+                    <th>
+                      TOTAL:
+                      <input type="number" placeholder="Total" class="form-control" min="1" pattern="^[0-9]+"/>
+                    </th>
 
-                        <th>
-                          Gasto a Efectuar:
-                          <input type="number" style="width:400px"placeholder="Gasto a Efectuar" class="form-control" />
-                        </th>
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
 
-                          <th>
-                          Saldo:
-                          <input type="number" style="width:400px"placeholder="Saldo" class="form-control" />
-                          </th>
+                    <h5>SECCIÓN V - INFORMACIÓN PRESUPUESTARIO PARA EL GASTO</h5>
+                    <h6>
+                      <th>
+                        CÓDIGO PRESUPUESTARIO:
+                        <input type="number" style="width:250px" placeholder="Código Presupuestario" class="form-control" min="0" pattern="^[0-9]+"/>
+                      </th>
 
-                      </h5>
-                       
-                          <div class="col-12">
+                      <th>
+                        DESCRIPCIÓN DEL ITEM PRESUPUESTARIO:
+                        <input type="text" style="width:250px" placeholder="Descripcion del Item Presupuestario" class="form-control" />
+                      </th>
 
-                             <th>
-                          Código Presupuestario:
-                          <input type="text" style="width:350px" placeholder="Código PRESUPUESTARIO" class="form-control" />
-                        </th>
+                      <th>
+                        VALOR CERTIFICACIÓN:
+                        <input type="number" style="width:200px" placeholder="Valor Certificado" class="form-control" min="1" pattern="^[0-9]+"/>
+                      </th>
 
-                        <th>
-                          Descripcion del Item Presupuestario:
-                          <input type="text" style="width:400px"placeholder="Descripcion del Item Presupuestario" class="form-control" />
-                        </th>
+                      <th>
+                        GASTOS A EFECTUAR:
+                        <input type="number" style="width:200px" placeholder="Gasto a Efectuar" class="form-control" min="1" pattern="^[0-9]+"/>
+                      </th>
 
-                        <th>
-                         Valor Certificado:
-                          <input type="number" style="width:400px"placeholder="Valor Certificado" class="form-control" />
-                        </th>
+                      <th>
+                        SALDO:
+                        <input type="number" style="width:200px" placeholder="Saldo" class="form-control" min="1" pattern="^[0-9]+"/>
+                      </th>
+                    </h6>
 
-                        <th>
-                          Gasto a Efectuar:
-                          <input type="number" style="width:400px"placeholder="Gasto a Efectuar" class="form-control" />
-                        </th>
+                    <h6>
+                      <th>
+                          CÓDIGO PRESUPUESTARIO:
+                        <input type="number" style="width:250px" placeholder="Código Presupuestario" class="form-control" min="0" pattern="^[0-9]+" />
+                      </th>
 
-                          <th>
-                          Saldo:
-                          <input type="number" style="width:400px"placeholder="Saldo" class="form-control" />
-                          </th>
-  
-      
-                          
-                          <div class="col-12">
-  
-  
-  
-                          </div>
-  
-                            <th>
-                                IVA
-                                <input [(ngModel)]="textoIva" #iva="ngModel" type="number" id="IVA" name="IVA" placeholder="IVA"  min="1" pattern="^[0-9]+"
-                                  mainlength="15" maxlength="666" class="form-control" size="25" required />
-                                <div *ngIf="iva.touched &&  !iva.valid">
-                                  <div *ngIf="iva.errors.required">Iva es necesario</div>
-                                  <div *ngIf="iva.errors.minlength">El iva debe ser de al menos
-                                    {{iva.errors.minlength.requiredLength}}caractres.</div>
-                                </div>
-                           </th>
-  
-                           <th>
-                              Otros Impuestos
-                              <input [(ngModel)]="textoOtrImp" #OtrImp="ngModel" type="number" id="OtrImp" name="OtrImp" placeholder="Otros Impuestos"  min="1" pattern="^[0-9]+"
-                                mainlength="15" maxlength="666" class="form-control" size="25" required />
-                              <div *ngIf="OtrImp.touched &&  !OtrImp.valid">
-                                <div *ngIf="OtrImp.errors.required">Iva es necesario</div>
-                                <div *ngIf="OtrImp.errors.minlength">Otro impuesto debe ser requerido
-                                  {{OtrImp.errors.minlength.requiredLength}}caractres.</div>
-                              </div>
-                         </th>                      
-                         <button type="button" class="btn btn-success">Guardar</button>
-                        
-                         <button type="button" class="btn btn-danger" >Cancelar  </button>
-                      </div>
-                      </form>
-                   </div>
-                </table>
-             </div>
-            </table>
-          </div>
+                      <th>
+                        DESCRIPCIÓN DEL ITEM PRESUPUESTARIO:
+                        <input type="text" style="width:250px" placeholder="Descripcion del Item Presupuestario" class="form-control" />
+                      </th>
+
+                      <th>
+                        VALOR CERTIFICACIÓN:
+                        <input type="number" style="width:200px" placeholder="Valor Certificado" class="form-control"min="1" pattern="^[0-9]+" />
+                      </th>
+
+                      <th>
+                        GASTOS A EFECTUAR:
+                        <input type="number" style="width:200px" placeholder="Gasto a Efectuar" class="form-control"min="1" pattern="^[0-9]+" />
+                      </th>
+
+                      <th>
+                        SALDO:
+                        <input type="number" style="width:200px" placeholder="Saldo" class="form-control" min="1" pattern="^[0-9]+"/>
+                      </th>
+                    </h6>
+
+                    <hr align="left" noshade="noshade" size="2" width="100%" />
+
+                    <div class="col-12">
+
+                    </div>
+                    <h6> TOTAL DE LA ORDEN DE GASTO </h6>
+
+                    <h5> SECCIÓN VI - FIRMAS DE RESPONSABILIDAD </h5>
+                    <h6>
+                      <th>
+                        ADM:
+                        <tr *ngFor="let login of  logins">
+                          <td>{{login.Usiario}}
+                          </td>
+                        </tr>
+                      </th>
+                    </h6>
+                  </form>
+                </div>
+              </table>
+            </div>
+          </table>
+          <button type="button" class="btn btn-success" onclick="window.print();">Imprimir</button>
+          <button type="button" class="btn btn-danger">Cancelar  </button>
         </div>
+      </div>
     </div>
   </div>
 </div>
