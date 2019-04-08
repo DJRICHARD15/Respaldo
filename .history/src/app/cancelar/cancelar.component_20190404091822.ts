@@ -57,7 +57,7 @@ export class CancelarComponent implements OnInit {
         footer: '<a href></a>'
       })
     } else {
-      this.router.navigateByUrl('/faq')
+      this.router.navigateByUrl('/inicio')
     }
   };
 }

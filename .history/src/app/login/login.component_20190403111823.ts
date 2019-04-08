@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
-
+// tslint:disable-next-line:import-spacing
+import { Swal }  from 'sweetalert2';
 
 declare var jquery: any;
 declare var $: any;
+const Swal = require('sweetalert2')
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,8 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
 title = 'sweetAlert';
+Swal: any;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -26,20 +29,16 @@ title = 'sweetAlert';
     let validacionPassword = $('#password').val();
 
     if (validacionUser === '' || validacionPassword === '') {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000
-      });
-
-      Toast.fire({
-        type: 'error',
-        title: 'Es necesario ingresar Usuario y Contraseña'
-      })
+      alert('Debes llenar todos los campos');
+      return false;
     } else {
       this.router.navigateByUrl('/inicio');
-
     }
+    Swal.fire({
+      title: 'Ingrese sus datos!',
+      text: 'Bienvenido ',
+      type: 'error',
+      confirmButtonText: 'Cool'
+    })
   };
 }

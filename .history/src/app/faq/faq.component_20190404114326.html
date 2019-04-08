@@ -21,34 +21,39 @@
               <table class="table">
                 <div class="col-12">
                   <form action="registro" method="post" class="form-register" onsubmit="return validar();">
-
                     <hr align="left" noshade="noshade" size="2" width="100%" />
 
                     <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO</h5>
                     <h6>
-                      <th>
-                        N°:
-                        <input type="number" placeholder="Numero de Orden" class="form-control" min="1" pattern="^[0-9]+" />
-                      </th>
+                          <tr *ngFor="let ordenGasto of ordenGastos">
+                          
+                  <th>Numero de Contrato</th>
+                  <td> {{ ordenGasto.numero_contrato}}</td>
+
+                              
                       <th>
                         Fecha:
-                        <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" min="2019-03-29" max="2019-03-29" step="1"
-                        />
                       </th>
+                   <td> {{ ordenGasto.fechaHoraIni}}</td>
+
                     </h6>
 
                     <hr align="left" noshade="noshade" size="2" width="100%" />
+                    <tr *ngFor="let ordenGasto of ordenGastos">
+
 
                     <h5>SECCIÓN II - INFORMACIÓN DE LA CONTRATACIÓN</h5>
                     <h6>
                       <th>
                         N°: Contrato/Orden de Compra/Contratación:
-                        <input type="text" style="width:350px" placeholder="Contrato/Orden de Compra/Contratación" class="form-control" />
                       </th>
+                      <td> {{ordenGasto.numero_contrato}}</td>
+
                       <th>
                         Objeto de la Contratación:
-                        <input type="text" style="width:400px" placeholder="Objeto de la contratacion" class="form-control" />
                       </th>
+                      <td> {{ordenGasto.objeto_contrato}}</td>
+
                     </h6>
 
                     <hr align="left" noshade="noshade" size="2" width="100%" />
@@ -57,16 +62,19 @@
                     <h6>
                       <th>
                         Nombre:
-                        <input type="text" style="width:300px" placeholder="Nombre" class="form-control" />
                       </th>
+                      <td> {{ordenGasto.nombreContratista}}</td>
+
                       <th>
                         Ruc:
-                        <input type="number" placeholder="Ruc" class="form-control" min="0" pattern="^[0-9]+" />
                       </th>
+                      <td> {{ordenGasto.ruc_contratista}}</td>
+
                       <th>
                         Mail:
-                        <input type="email" style="width:300px" placeholder="Mail" class="form-control" />
                       </th>
+                      <td> {{ordenGasto.email}}</td>
+
                     </h6>
 
                     <hr align="left" noshade="noshade" size="2" width="100%" />
@@ -75,44 +83,47 @@
                     <h6>
                       <th>
                         ORD:
-                        <input type="number" placeholder="Orden De Gasto" class="form-control" min="1" pattern="^[0-9]+"/>
                       </th>
+                  <td>{{ ordenGasto.numOrden }}</td>
+
+
                       <th>
                         DESCRIPCIÓN:
-                        <input type="text" style="width:200px" placeholder="Descripcion" class="form-control" />
                       </th>
+                      <td>{{ ordenGasto.descripcion }}</td>
+
                       <th>
                         CANTIDAD:
-                        <input type="number" placeholder="Cantidad" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.cantidad }}</td>
+
                       <th> 
                         PRECIO UNITARIO: 
-                        <input type="number" placeholder="Precio Unitario" class="form-control" min="1" pattern="^[0-9]+"/>
                       </th>
+                      <td>{{ ordenGasto.precioUnitario }}</td>
 
                     <th>
                       SUBTOTAL:
-                      <input type="number" placeholder="Subtotal" class="form-control" min="1" pattern="^[0-9]+" />
                     </th>
+                    <td>{{ ordenGasto.subtotal }}</td>
+
                     <th>
                       IVA 12%:
-                      <input type="number"style="width:100px" placeholder="Iva" class="form-control" min="1" pattern="^[0-9]+"/>
                     </th>
+                    <td>{{ ordenGasto.iva }}</td>
 
                     <th>
                       OTROS IMPUESTOS:
-                      <input type="number" placeholder="Otros Impuestos" class="form-control" min="1" pattern="^[0-9]+"/>
                     </th>
+                    <td>{{ ordenGasto.otrosImpuestos }}</td>
 
                     <th>
                       TOTAL:
-                      <input type="number" placeholder="Total" class="form-control" min="1" pattern="^[0-9]+"/>
                     </th>
+                    <td>{{ ordenGasto.total }}</td>
+
                   </h6>
                   </small>
-
-                    <th> TOTAL DE LA O DE GASTO:
-                    </th>
 
 
                     <hr align="left" noshade="noshade" size="2" width="100%" />
@@ -121,57 +132,61 @@
                     <h6>
                       <th>
                         CÓDIGO PRESUPUESTARIO:
-                        <input type="number" style="width:250px" placeholder="Código Presupuestario" class="form-control" min="0" pattern="^[0-9]+"
-                        />
+                   
                       </th>
+                      <td>{{ ordenGasto.cod_presupuestario }}</td>
+
 
                       <th>
                         DESCRIPCIÓN DEL ITEM PRESUPUESTARIO:
-                        <input type="text" style="width:250px" placeholder="Descripcion del Item Presupuestario" class="form-control" />
                       </th>
+                      <td>{{ ordenGasto.descripcionpresupuestaria }}</td>
+
 
                       <th>
                         VALOR CERTIFICACIÓN:
-                        <input type="number" style="width:200px" placeholder="Valor Certificado" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.valorCert }}</td>
 
                       <th>
                         GASTOS A EFECTUAR:
-                        <input type="number" style="width:200px" placeholder="Gasto a Efectuar" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.afectuar }}</td>
 
                       <th>
                         SALDO:
-                        <input type="number" style="width:200px" placeholder="Saldo" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.saldo }}</td>
+
                     </h6>
 
                     <h6>
-                      <th>
+                      <!-- <th>
                         CÓDIGO PRESUPUESTARIO:
-                        <input type="number" style="width:250px" placeholder="Código Presupuestario" class="form-control" min="0" pattern="^[0-9]+"
-                        />
+                       
                       </th>
+                      <td>{{ ordenGasto.cod_presupuestario }}</td>
 
                       <th>
                         DESCRIPCIÓN DEL ITEM PRESUPUESTARIO:
-                        <input type="text" style="width:250px" placeholder="Descripcion del Item Presupuestario" class="form-control" />
                       </th>
+                      <td>{{ ordenGasto.descripcion }}</td>
 
                       <th>
                         VALOR CERTIFICACIÓN:
-                        <input type="number" style="width:200px" placeholder="Valor Certificado" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.valorCert }}</td>
 
                       <th>
                         GASTOS A EFECTUAR:
-                        <input type="number" style="width:200px" placeholder="Gasto a Efectuar" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.afectuar }}</td>
 
                       <th>
                         SALDO:
-                        <input type="number" style="width:200px" placeholder="Saldo" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td>{{ ordenGasto.saldo }}</td> 
+
                     </h6>
 
                     <hr align="left" noshade="noshade" size="2" width="100%" />
@@ -183,6 +198,9 @@
 
                     <h5> SECCIÓN VI - FIRMAS DE RESPONSABILIDAD </h5>
                     <h6>
+
+
+
                     </h6>
                   </form>
                 </div>
@@ -190,10 +208,7 @@
             </div>
           </table>
           <button mat-raised-button class="btn btn-success" onclick="window.print();">
-              <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
-              <button mat-raisesd-button class="btn btn-danger">editar</button>
-              <button mat-raisesd-button value="Eliminar" title="Eliminar" class="btn btn-danger" (click)="deleteOrdenGasto(ordenGastos)">eliminar<i class="material-icons" >delete_sweep
-                </i></button>
+            <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
         </div>
       </div>
     </div>

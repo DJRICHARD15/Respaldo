@@ -104,7 +104,7 @@
 
                       <th>
                         IVA
-                        <input [(ngModel)]="textoIva" #iva="ngModel" type="number" id="Iva" name="Iva" placeholder="Iva"
+                        <input [(ngModel)]="textoIva" #iva="ngModel" type="number" id="IVA" name="IVA" placeholder="IVA"
                           min="1" pattern="^[0-9]+" mainlength="15" maxlength="666" class="form-control" size="25"
                           required />
 
@@ -117,11 +117,9 @@
                           class="form-control" size="25" required />
 
                       </th>
-
-                      <button class="close" data-dismiss="alert" 
+                      <h1><button class="close" data-dismiss="alert" 
                         type="submit" id="ingresar" class="btn btn-success" 
-                        (click)="btnClickHome()">Enviar</button>  
-
+                        (click)="btnClickHome()">Enviar</button> </h1> 
                       <button type="button" class="btn btn-danger" router-Link='/home'>Cancelar </button>
                     </div>
                   </form>

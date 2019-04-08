@@ -26,20 +26,20 @@ title = 'sweetAlert';
     let validacionPassword = $('#password').val();
 
     if (validacionUser === '' || validacionPassword === '') {
+      alert('Debes llenar todos los campos');
+      return false;
+    } else {
+      this.router.navigateByUrl('/inicio');
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000
       });
-
       Toast.fire({
-        type: 'error',
-        title: 'Es necesario ingresar Usuario y Contraseña'
+        type: 'success',
+        title: 'Signed in successfully'
       })
-    } else {
-      this.router.navigateByUrl('/inicio');
-
     }
   };
 }

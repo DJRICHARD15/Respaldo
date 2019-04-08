@@ -26,10 +26,12 @@
 
                     <h5>SECCIÓN I - IDENTIFICACIÓN DE LA ORDEN DE GASTO</h5>
                     <h6>
+                        <tr *ngFor="let ordenGasto of ordenGastos">
                       <th>
                         N°:
-                        <input type="number" placeholder="Numero de Orden" class="form-control" min="1" pattern="^[0-9]+" />
                       </th>
+                      <td> {{ ordenGasto.numero_contrato}}</td>
+
                       <th>
                         Fecha:
                         <input type="Date" placeholder="Fecha de la Orden de Gasto" class="form-control" min="2019-03-29" max="2019-03-29" step="1"
@@ -190,10 +192,7 @@
             </div>
           </table>
           <button mat-raised-button class="btn btn-success" onclick="window.print();">
-              <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
-              <button mat-raisesd-button class="btn btn-danger">editar</button>
-              <button mat-raisesd-button value="Eliminar" title="Eliminar" class="btn btn-danger" (click)="deleteOrdenGasto(ordenGastos)">eliminar<i class="material-icons" >delete_sweep
-                </i></button>
+            <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
         </div>
       </div>
     </div>

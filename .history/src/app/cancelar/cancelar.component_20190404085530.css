@@ -1,4 +1,4 @@
-.tada {
+.Swal.fire {
   -webkit-animation-name: jello;
   animation-name: jello;
   -webkit-transform-origin: center;

@@ -35,7 +35,7 @@ title = 'sweetAlert';
 
       Toast.fire({
         type: 'error',
-        title: 'Es necesario ingresar Usuario y Contraseña'
+        title: 'Es necesario ingresar sus datos'
       })
     } else {
       this.router.navigateByUrl('/inicio');

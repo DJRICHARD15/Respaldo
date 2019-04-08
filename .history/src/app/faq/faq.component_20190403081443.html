@@ -183,6 +183,13 @@
 
                     <h5> SECCIÓN VI - FIRMAS DE RESPONSABILIDAD </h5>
                     <h6>
+                      <th>
+                        ADM:
+                        <tr *ngFor="let login of  logins">
+                          <td>{{login.Usiario}}
+                          </td>
+                        </tr>
+                      </th>
                     </h6>
                   </form>
                 </div>
@@ -190,10 +197,7 @@
             </div>
           </table>
           <button mat-raised-button class="btn btn-success" onclick="window.print();">
-              <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
-              <button mat-raisesd-button class="btn btn-danger">editar</button>
-              <button mat-raisesd-button value="Eliminar" title="Eliminar" class="btn btn-danger" (click)="deleteOrdenGasto(ordenGastos)">eliminar<i class="material-icons" >delete_sweep
-                </i></button>
+            <i class="material-icons">print&nbsp;</i>Imprimir Orden</button>
         </div>
       </div>
     </div>

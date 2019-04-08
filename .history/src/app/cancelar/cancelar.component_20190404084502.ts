@@ -51,13 +51,19 @@ export class CancelarComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     validacionDescripcion === '' || validacionCantidad === '' || validacionPreUni === '' || validacionIva === '' || validacionOtrImp === '' ) {
       Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Faltan Campos por llenar!',
-        footer: '<a href></a>'
+        title: 'Es nesesario llenar el formulario.',
+        width: 600,
+        padding: '3em',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("/images/nyan-cat.gif")
+          center left
+          no-repeat
+        `
       })
     } else {
-      this.router.navigateByUrl('/faq')
+      this.router.navigateByUrl('/inicio')
     }
   };
 }

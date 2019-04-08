@@ -32,14 +32,14 @@ title = 'sweetAlert';
         showConfirmButton: false,
         timer: 3000
       });
-
+      
       Toast.fire({
-        type: 'error',
-        title: 'Es necesario ingresar Usuario y Contraseña'
+        type: 'success',
+        title: 'Signed in successfully'
       })
     } else {
       this.router.navigateByUrl('/inicio');
-
+      
     }
   };
 }

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Orden_Gasto } from './../model/OrdenGasto';
 import { OrdenGastoService } from '../services/OrdenGasto.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 declare var jquery: any;
@@ -15,34 +14,35 @@ declare var $: any;
 })
 export class CancelarComponent implements OnInit {
   title = 'sweetAlert';
+
+  date: Date;
   constructor(
     private http: HttpClient,
-    private router: Router,
     private ordenGastoDataService: OrdenGastoService, ) { }
 
   ngOnInit() {
   }
   btnClickHome =  function () {
     // tslint:disable-next-line:prefer-const
-    let validacionTipoPago = $('#tipoPago').val();
+    let validacionTipoPago = $ ('#tipoPago').val();
     // tslint:disable-next-line:prefer-const
     let validacionRuc = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionOrdG = $('#OrdG').val();
+    let validacionOrdG = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validaciondate = $('#date').val();
+    let validaciondate = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionOrden = $('#Orden').val();
+    let validacionOrden = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionDescripcion = $('#Descripcion').val();
+    let validacionDescripcion = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionCantidad = $('#Cantidad').val();
+    let validacionCantidad = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionPreUni = $('#PreUni').val();
+    let validacionPreUni = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionIva = $('#Iva').val();
+    let validacionIva = $('#ruc').val();
     // tslint:disable-next-line:prefer-const
-    let validacionOtrImp = $('#OtrImp').val();
+    let validacionOtrImp = $('#ruc').val();
 
 
     // tslint:disable-next-line:curly
@@ -50,14 +50,20 @@ export class CancelarComponent implements OnInit {
     if (validacionTipoPago === '' || validacionRuc === '' || validacionOrdG === '' || validaciondate === '' || validacionOrden === '' ||
     // tslint:disable-next-line:max-line-length
     validacionDescripcion === '' || validacionCantidad === '' || validacionPreUni === '' || validacionIva === '' || validacionOtrImp === '' ) {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Faltan Campos por llenar!',
-        footer: '<a href></a>'
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+
+      Toast.fire({
+        type: 'success',
+        title: 'Es necesario ingresar sus datos'
       })
     } else {
-      this.router.navigateByUrl('/faq')
+      this.router.navigateByUrl('/inicio');
+
     }
   };
 }

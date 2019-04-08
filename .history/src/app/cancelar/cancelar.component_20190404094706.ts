@@ -50,11 +50,42 @@ export class CancelarComponent implements OnInit {
     if (validacionTipoPago === '' || validacionRuc === '' || validacionOrdG === '' || validaciondate === '' || validacionOrden === '' ||
     // tslint:disable-next-line:max-line-length
     validacionDescripcion === '' || validacionCantidad === '' || validacionPreUni === '' || validacionIva === '' || validacionOtrImp === '' ) {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Faltan Campos por llenar!',
-        footer: '<a href></a>'
+      // Swal.fire({
+      //   type: 'error',
+      //   title: 'Oops...',
+      //   text: 'Faltan Campos por llenar!',
+      //   footer: '<a href></a>'
+      // })
+      const swalWithBootstrapButtons = swal.mixin({
+        confirmButtonClass: 'btn btn-success',
+        cancelButtonClass: 'btn btn-danger',
+        buttonsStyling: false,
+      })
+      swalWithBootstrapButtons({
+        title: '¿Estás seguro?',
+        text: '¡No podrás revertir esto!',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: '¡Sí, bórralo!',
+        cancelButtonText: 'No, cancelalo!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.value) {
+          swalWithBootstrapButtons(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
+        } else if (
+          // Read more about handling dismissals
+          result.dismiss === swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons(
+            'Cancelled',
+            'Your imaginary file is safe :)',
+            'error'
+          )
+        }
       })
     } else {
       this.router.navigateByUrl('/faq')

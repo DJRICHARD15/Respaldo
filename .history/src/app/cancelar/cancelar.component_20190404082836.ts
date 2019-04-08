@@ -50,14 +50,20 @@ export class CancelarComponent implements OnInit {
     if (validacionTipoPago === '' || validacionRuc === '' || validacionOrdG === '' || validaciondate === '' || validacionOrden === '' ||
     // tslint:disable-next-line:max-line-length
     validacionDescripcion === '' || validacionCantidad === '' || validacionPreUni === '' || validacionIva === '' || validacionOtrImp === '' ) {
-      Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Faltan Campos por llenar!',
-        footer: '<a href></a>'
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+      });
+
+      Toast.fire({
+        type: 'success',
+        title: 'Es necesario ingresar sus datos'
       })
     } else {
-      this.router.navigateByUrl('/faq')
+      this.router.navigateByUrl('/inicio');
+
     }
   };
 }
